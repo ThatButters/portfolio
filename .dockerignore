@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+superdesign
+docs
+*.md
+.env*
+Dockerfile
+.dockerignore
