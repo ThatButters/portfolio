@@ -44,8 +44,8 @@ export default function Marquee() {
           overflow > 0
             ? {
                 x: {
-                  duration: 60,
-                  ease: "easeInOut",
+                  duration: 120,
+                  ease: "linear",
                   repeat: Infinity,
                   repeatType: "loop" as const,
                 },
