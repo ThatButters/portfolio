@@ -36,6 +36,16 @@ export const marqueeWords = [
   "Flask",
   "LLM Engineering",
   "SaaS",
+  "JavaScript",
+  "SQL",
+  "PowerShell",
+  "Django REST",
+  "Linux",
+  "VPS Deploy",
+  "Prompt Engineering",
+  "Home Automation",
+  "Networking",
+  "Database Admin",
 ];
 
 export const featuredProject = {

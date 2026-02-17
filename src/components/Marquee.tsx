@@ -9,6 +9,9 @@ export default function Marquee() {
   const contentRef = useRef<HTMLDivElement>(null);
   const [overflow, setOverflow] = useState(0);
 
+  // Triple the words so content always exceeds the container
+  const words = [...marqueeWords, ...marqueeWords, ...marqueeWords];
+
   useEffect(() => {
     function measure() {
       if (containerRef.current && contentRef.current) {
@@ -17,7 +20,9 @@ export default function Marquee() {
         setOverflow(Math.max(0, contentWidth - containerWidth));
       }
     }
+    // Measure after fonts load
     measure();
+    document.fonts?.ready.then(measure);
     window.addEventListener("resize", measure);
     return () => window.removeEventListener("resize", measure);
   }, []);
@@ -39,7 +44,7 @@ export default function Marquee() {
           overflow > 0
             ? {
                 x: {
-                  duration: 30,
+                  duration: 25,
                   ease: "easeInOut",
                   repeat: Infinity,
                   repeatType: "loop" as const,
@@ -48,7 +53,7 @@ export default function Marquee() {
             : undefined
         }
       >
-        {marqueeWords.map((word, i) => (
+        {words.map((word, i) => (
           <span key={i} className="mx-6 font-mono text-sm text-muted">
             {word}
             <span className="text-accent ml-6">/</span>
