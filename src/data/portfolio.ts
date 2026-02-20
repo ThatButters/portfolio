@@ -67,6 +67,14 @@ export const projects: {
   image?: string;
 }[] = [
   {
+    title: "3Dify",
+    description:
+      "Converts a photo into a 3D-printable STL using Hunyuan3D 2.1 running on a self-hosted RTX 5070 Ti. Web interface on a VPS, communicates with the GPU over WebSocket — upload a photo, a graphics card in Phoenix, AZ builds your object into 3D geometry in real time.",
+    tech: ["Hunyuan3D 2.1", "FastAPI", "React", "PostgreSQL", "WebSocket", "Docker"],
+    github: "https://lnkd.in/gMvuFx-w",
+    live: "https://3dify.beeman.cloud",
+  },
+  {
     title: "Roast My Code",
     description:
       "AI-powered code review tool using Flask and the Anthropic Claude API. Features multiple review modes (Standard Roast, Serious Review, Statler & Waldorf), budget tracking, rate limiting, and shareable roast URLs with scores.",
