@@ -73,6 +73,7 @@ export const projects: {
     tech: ["Hunyuan3D 2.1", "FastAPI", "React", "PostgreSQL", "WebSocket", "Docker"],
     github: "https://lnkd.in/gMvuFx-w",
     live: "https://3dify.beeman.cloud",
+    image: "/images/projects/3dify.png",
   },
   {
     title: "Roast My Code",
