@@ -67,6 +67,14 @@ export const projects: {
   image?: string;
 }[] = [
   {
+    title: "Buried in Work",
+    description:
+      "Ongoing technical partner for an estate-planning and end-of-life resource platform helping families navigate one of life's hardest chapters. Work spans full-stack site stewardship — performance tuning informed by server-log analysis, plugin maintenance, custom theme and backend development, mobile layout polish across key templates, and a ground-up rebuild of the directory search experience to make resources easier to find when people need them most.",
+    tech: ["WordPress", "PHP", "MySQL", "JavaScript"],
+    live: "https://buriedinwork.com",
+    image: "/images/projects/buriedinwork.png",
+  },
+  {
     title: "3Dify",
     description:
       "Converts a photo into a 3D-printable STL using Hunyuan3D 2.1 running on a self-hosted RTX 5070 Ti. Web interface on a VPS, communicates with the GPU over WebSocket — upload a photo, a graphics card in Phoenix, AZ builds your object into 3D geometry in real time.",
