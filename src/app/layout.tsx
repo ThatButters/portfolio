@@ -1,5 +1,7 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Syne, JetBrains_Mono } from "next/font/google";
+import MotionProvider from "@/components/MotionProvider";
+import { siteConfig } from "@/data/portfolio";
 import "./globals.css";
 
 const syne = Syne({
@@ -14,16 +16,41 @@ const jetbrainsMono = JetBrains_Mono({
   display: "swap",
 });
 
+const title = `${siteConfig.name} — ${siteConfig.role}`;
+const description =
+  "Full-stack developer leading technology at Buried in Work (Buried in Work, Heirloom & Tell, AuthorChecklist) and building AI-powered apps with Python, TypeScript, React, and the Claude API.";
+
 export const metadata: Metadata = {
-  title: "Charles Beeman — Software Developer & AI Integration Specialist",
-  description:
-    "Software developer and founder building AI-powered web applications with Python, Node.js, React, and LLM integration.",
+  metadataBase: new URL(siteConfig.url),
+  title,
+  description,
+  alternates: { canonical: "/" },
+  authors: [{ name: siteConfig.name, url: siteConfig.url }],
   openGraph: {
-    title: "Charles Beeman — Software Developer & AI Integration Specialist",
-    description:
-      "Software developer and founder building AI-powered web applications.",
-    type: "website",
+    title,
+    description,
+    url: "/",
+    siteName: siteConfig.name,
+    type: "profile",
+    locale: "en_US",
   },
+  twitter: { card: "summary_large_image", title, description },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#0a0a0b",
+  colorScheme: "dark",
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  jobTitle: siteConfig.role,
+  worksFor: { "@type": "Organization", name: "Buried in Work", url: "https://buriedinwork.com" },
+  award: "DAISY Award for Extraordinary Nurses (2020)",
+  sameAs: Object.values(siteConfig.social),
 };
 
 export default function RootLayout({
@@ -36,7 +63,17 @@ export default function RootLayout({
       <body
         className={`${syne.variable} ${jetbrainsMono.variable} font-sans antialiased bg-background text-foreground noise-overlay`}
       >
-        {children}
+        <a
+          href="#biw"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:px-4 focus:py-2 focus:rounded focus:bg-accent focus:text-background focus:font-mono focus:text-sm"
+        >
+          Skip to content
+        </a>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@
   --color-background: #0a0a0b;
   --color-foreground: #e4e4e7;
   --color-accent: #e97316;
-  --color-muted: #71717a;
+  --color-muted: #9a9aa3;
   --color-card: #141415;
   --color-card-hover: #1a1a1b;
   --color-border: #27272a;
@@ -22,6 +22,8 @@ html {
 body {
   background: var(--color-background);
   color: var(--color-foreground);
+  /* Decorative glows are wider than a phone; clip them instead of scrolling sideways. */
+  overflow-x: clip;
 }
 
 ::selection {
@@ -88,4 +90,21 @@ body {
 
 .animate-blob-pulse {
   animation: blob-pulse 8s ease-in-out infinite;
+}
+
+
+/* ── Respect reduced-motion preferences ── */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }

@@ -11,7 +11,7 @@ export default function Experience() {
   return (
     <section id="experience" className="relative py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading number="03." title="Experience" />
+        <SectionHeading number="04." title="Experience" />
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}

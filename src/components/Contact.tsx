@@ -5,7 +5,7 @@ import { siteConfig } from "@/data/portfolio";
 
 export default function Contact() {
   return (
-    <section id="contact" className="relative py-32">
+    <section id="contact" className="relative py-32 overflow-x-clip">
       {/* Background gradient */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
 
@@ -18,7 +18,7 @@ export default function Contact() {
           className="space-y-6"
         >
           <p className="font-mono text-accent text-sm tracking-widest">
-            04. What&apos;s Next?
+            05. What&apos;s Next?
           </p>
           <h2 className="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
             Let&apos;s Build
@@ -27,15 +27,16 @@ export default function Contact() {
           </h2>
           <p className="text-muted max-w-md mx-auto text-lg leading-relaxed">
             I&apos;m always open to new opportunities and interesting projects.
-            Whether you have a question or just want to say hi, my inbox is
-            always open.
+            The best way to reach me is a message on LinkedIn.
           </p>
           <div className="pt-4">
             <a
-              href={`mailto:${siteConfig.email}`}
+              href={siteConfig.social.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block px-8 py-4 font-mono text-sm text-accent border border-accent rounded hover:bg-accent/10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(233,115,22,0.15)]"
             >
-              Say Hello
+              Message me on LinkedIn
             </a>
           </div>
           <div className="flex justify-center gap-6 pt-8">
