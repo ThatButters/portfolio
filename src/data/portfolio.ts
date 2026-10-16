@@ -13,11 +13,12 @@ export const siteConfig = {
   },
 };
 
+// Hero readouts, styled like bedside-monitor numerics (label, value, unit, channel colour).
 export const stats = [
-  { value: "20", label: "Years at the bedside" },
-  { value: "19+", label: "Years in IT" },
-  { value: "DAISY", label: "Award winner" },
-];
+  { label: "Bedside", value: "20", unit: "yrs", sub: "LPN since 2006", tone: "accent" },
+  { label: "IT", value: "19+", unit: "yrs", sub: "since 2003", tone: "cyan" },
+  { label: "DAISY", value: "2020", unit: "", sub: "Extraordinary Nurse", tone: "amber" },
+] as { label: string; value: string; unit: string; sub: string; tone: "accent" | "cyan" | "amber" }[];
 
 // Section numbers match the headings on the page (Stack, 05, is left out of the nav for room).
 export const navLinks = [

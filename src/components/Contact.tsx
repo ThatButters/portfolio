@@ -34,7 +34,7 @@ export default function Contact() {
               href={siteConfig.social.linkedin}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block px-8 py-4 font-mono text-sm text-accent border border-accent rounded hover:bg-accent/10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(233,115,22,0.15)]"
+              className="inline-block px-8 py-4 font-mono text-sm text-accent border border-accent rounded hover:bg-accent/10 transition-all duration-300 hover:shadow-[0_0_30px_rgba(51,224,122,0.15)]"
             >
               Message me on LinkedIn
             </a>
