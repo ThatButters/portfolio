@@ -18,7 +18,7 @@ const jetbrainsMono = JetBrains_Mono({
 
 const title = `${siteConfig.name} — ${siteConfig.role}`;
 const description =
-  "Full-stack developer leading technology at Buried in Work (Buried in Work, Heirloom & Tell, AuthorChecklist) and building AI-powered apps with Python, TypeScript, React, and the Claude API.";
+  "Code with a pulse. Full-stack developer and nurse (LPN) leading technology at Buried in Work, Heirloom & Tell and AuthorChecklist: software for the hardest days families face.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),

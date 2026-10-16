@@ -37,7 +37,7 @@ export default function OpengraphImage() {
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 26, color: "#a1a1aa" }}>
-          Technology at Buried in Work · Heirloom &amp; Tell · AuthorChecklist
+          Full-stack developer · Nurse (LPN) · Technology at Buried in Work
         </div>
       </div>
     ),

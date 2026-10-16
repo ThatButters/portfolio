@@ -1,10 +1,12 @@
 export const siteConfig = {
   name: "Charles Beeman",
   url: "https://beeman.cloud",
-  role: "Software Developer & AI Integration Specialist",
-  tagline: "I build AI-powered apps and ship them.",
+  role: "Full-Stack Developer · Nurse (LPN)",
+  tagline: "Code with a pulse.",
+  subline:
+    "Twenty years at the bedside, nineteen in IT. I build software that feels human.",
   description:
-    "Full-stack developer with 19+ years in IT. I lead technology at Buried in Work, where I build and run eight public sites for estate planning and family history, and I ship my own AI-powered apps on the side.",
+    "I lead technology at Buried in Work, where I build and run eight public sites that help families plan ahead, get through a death, and keep their stories. Before and alongside that: a career caring for medically complex kids, and a small IT business that's been fixing things since 2006.",
   social: {
     github: "https://github.com/thatbutters",
     linkedin: "https://www.linkedin.com/in/charles-beeman-bab50b79/",
@@ -12,17 +14,19 @@ export const siteConfig = {
 };
 
 export const stats = [
+  { value: "20", label: "Years at the bedside" },
   { value: "19+", label: "Years in IT" },
-  { value: "10+", label: "Live sites shipped" },
-  { value: "DAISY", label: "Award Winner" },
+  { value: "DAISY", label: "Award winner" },
 ];
 
+// Section numbers match the headings on the page (Stack, 05, is left out of the nav for room).
 export const navLinks = [
-  { name: "Buried in Work", href: "#biw" },
-  { name: "Projects", href: "#projects" },
-  { name: "Stack", href: "#stack" },
-  { name: "Experience", href: "#experience" },
-  { name: "Contact", href: "#contact" },
+  { name: "Buried in Work", href: "#biw", number: "01" },
+  { name: "Two Careers", href: "#story", number: "02" },
+  { name: "Projects", href: "#projects", number: "03" },
+  { name: "Vitals", href: "#vitals", number: "04" },
+  { name: "Experience", href: "#experience", number: "06" },
+  { name: "Contact", href: "#contact", number: "07" },
 ];
 
 export const marqueeWords = [
@@ -42,6 +46,10 @@ export const marqueeWords = [
   "RAG & Search",
   "Playwright",
   "GitHub Actions",
+  "React Router",
+  "Prisma",
+  "MCP Servers",
+  "WebRTC",
   "Privacy by Design",
   "SaaS",
   "Linux",
@@ -180,31 +188,37 @@ export const techStack = {
     { name: "Python", icon: "PY" },
     { name: "TypeScript", icon: "TS" },
     { name: "JavaScript", icon: "JS" },
-    { name: "HTML/CSS", icon: "HTM" },
     { name: "SQL", icon: "SQL" },
+    { name: "HTML/CSS", icon: "HTM" },
     { name: "PowerShell", icon: "PS" },
   ],
   Frameworks: [
     { name: "React", icon: "RCT" },
+    { name: "React Router", icon: "RR" },
     { name: "Next.js", icon: "NXT" },
-    { name: "Node.js", icon: "NJS" },
+    { name: "Express", icon: "EXP" },
     { name: "Flask", icon: "FLK" },
     { name: "FastAPI", icon: "FST" },
+    { name: "Tailwind", icon: "TW" },
     { name: "Django REST", icon: "DRF" },
   ],
   "AI & LLMs": [
     { name: "Claude API", icon: "CLD" },
     { name: "Claude Code", icon: "CC" },
+    { name: "MCP Servers", icon: "MCP" },
     { name: "RAG & Search", icon: "RAG" },
+    { name: "Speech-to-Text", icon: "STT" },
     { name: "Prompt Eng.", icon: "PRO" },
   ],
-  "Infra & Tools": [
-    { name: "Linux", icon: "LNX" },
-    { name: "Docker", icon: "DKR" },
-    { name: "GitHub Actions", icon: "GHA" },
+  "Data, Infra & Testing": [
     { name: "PostgreSQL", icon: "PG" },
+    { name: "Prisma", icon: "PRS" },
+    { name: "Docker", icon: "DKR" },
+    { name: "Linux", icon: "LNX" },
+    { name: "GitHub Actions", icon: "GHA" },
     { name: "Playwright", icon: "PW" },
-    { name: "SQLite", icon: "SLT" },
+    { name: "Vitest", icon: "VT" },
+    { name: "LiveKit (WebRTC)", icon: "RTC" },
   ],
 };
 
@@ -252,4 +266,48 @@ export const experiences = [
       "Apply critical thinking and rapid decision-making in high-stakes, autonomous work environments",
     ],
   },
+];
+
+/* ── Two careers ────────────────────────────────────────────── */
+
+export const story = {
+  lead:
+    "I've been a nurse for twenty years and in IT for nineteen. People hear that and assume two different jobs. They're the same job: someone is depending on a system to keep working, and you're the one watching it.",
+  timeline: [
+    { year: "2001", lane: "it", text: "Starts an Information Science & Technology degree" },
+    { year: "2003", lane: "it", text: "Network specialist: support for about 150 users, Cisco routers, backups" },
+    { year: "2005", lane: "care", text: "Nursing school" },
+    { year: "2006", lane: "it", text: "Opens Beeman Computer Services" },
+    { year: "2006", lane: "care", text: "Licensed Practical Nurse" },
+    { year: "2007", lane: "care", text: "Private-duty pediatric nursing: ventilators, trachs, wound care" },
+    { year: "2020", lane: "care", text: "DAISY Award for Extraordinary Nurses" },
+    { year: "2026", lane: "it", text: "Ships ForgetMeNots, then takes on technology at Buried in Work" },
+    { year: "2026", lane: "both", text: "Both at once: software for the hardest days a family has" },
+  ] as { year: string; lane: "it" | "care" | "both"; text: string }[],
+  lessons: [
+    {
+      title: "Watch the patient, not the monitor.",
+      body: "A monitor can read normal while the patient in the bed isn't. A green status code isn't proof something works either. I check the real outcome: did the email arrive, did the page load, did the person get what they came for.",
+    },
+    {
+      title: "If you didn't chart it, it didn't happen.",
+      body: "Every shift ends with a handoff someone else can pick up cold. I write code, commit history, and decisions the same way: for whoever comes next, including me at 3am.",
+    },
+    {
+      title: "When in doubt, alarm.",
+      body: "A good alarm would rather be wrong loudly than right too late. What I build fails safe: if it can't be sure someone should see something, they don't, and a person finds out why.",
+    },
+    {
+      title: "Remember who's in the room.",
+      body: "The person on the other side of the screen is often scared, grieving, or running on no sleep. So the AI in our products suggests and cites but never decides, and never speaks for a family.",
+    },
+  ],
+};
+
+/* ── 2026 vitals (heatmap) ──────────────────────────────────── */
+
+export const vitalsMilestones = [
+  { date: "2026-02-17", label: "This site, v1" },
+  { date: "2026-06-17", label: "Heirloom & Tell, first commit" },
+  { date: "2026-10-06", label: "Buried in Work leaves WordPress" },
 ];

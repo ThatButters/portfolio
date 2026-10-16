@@ -34,15 +34,15 @@ export default function Navbar() {
         </a>
 
         {/* Desktop nav */}
-        <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link, i) => (
+        <div className="hidden lg:flex items-center gap-6">
+          {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               className="group flex items-center gap-1.5 text-sm text-muted hover:text-foreground transition-colors"
             >
               <span className="font-mono text-accent text-xs">
-                0{i + 1}.
+                {link.number}.
               </span>
               {link.name}
             </a>
@@ -52,7 +52,7 @@ export default function Navbar() {
         {/* Mobile hamburger */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="lg:hidden flex flex-col gap-1.5 p-2"
           aria-label="Toggle menu"
         >
           <span
@@ -69,9 +69,9 @@ export default function Navbar() {
         <motion.div
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 space-y-4"
+          className="lg:hidden bg-background/95 backdrop-blur-xl border-b border-border px-6 py-6 space-y-4"
         >
-          {navLinks.map((link, i) => (
+          {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
@@ -79,7 +79,7 @@ export default function Navbar() {
               className="block text-sm text-muted hover:text-foreground transition-colors"
             >
               <span className="font-mono text-accent text-xs mr-2">
-                0{i + 1}.
+                {link.number}.
               </span>
               {link.name}
             </a>

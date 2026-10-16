@@ -11,7 +11,7 @@ export default function TechStack() {
   return (
     <section id="stack" className="relative py-32">
       <div className="mx-auto max-w-6xl px-6">
-        <SectionHeading number="03." title="Tech Stack" />
+        <SectionHeading number="05." title="Tech Stack" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {categories.map(([category, items], catIndex) => (

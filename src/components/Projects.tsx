@@ -116,7 +116,7 @@ export default function Projects() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-accent/3 blur-[150px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-6xl px-6">
-        <SectionHeading number="02." title="Independent Projects" />
+        <SectionHeading number="03." title="Independent Projects" />
 
         {/* Featured project */}
         <motion.div

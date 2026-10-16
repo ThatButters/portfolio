@@ -8,6 +8,9 @@ export default function Footer() {
           Designed & Built by {siteConfig.name}
         </p>
         <p className="font-mono text-xs text-muted">
+          psst: press <kbd className="px-1.5 py-0.5 rounded border border-border text-accent">~</kbd>
+        </p>
+        <p className="font-mono text-xs text-muted">
           &copy; {new Date().getFullYear()}
         </p>
       </div>
