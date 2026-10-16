@@ -18,7 +18,7 @@ export default function Contact() {
           className="space-y-6"
         >
           <p className="font-mono text-accent text-sm tracking-widest">
-            05. What&apos;s Next?
+            07. What&apos;s Next?
           </p>
           <h2 className="font-sans text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
             Let&apos;s Build

@@ -108,3 +108,18 @@ body {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Heart-monitor sweep (PulseLine) ── */
+
+.pulse-sweep {
+  stroke-dasharray: 140 860;
+  stroke-dashoffset: 1000;
+  filter: drop-shadow(0 0 4px rgba(233, 115, 22, 0.8));
+  animation: pulse-sweep 4.2s linear infinite;
+}
+
+@keyframes pulse-sweep {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

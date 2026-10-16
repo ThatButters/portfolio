@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { siteConfig, stats } from "@/data/portfolio";
+import PulseLine from "./PulseLine";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -55,17 +56,31 @@ export default function Hero() {
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="font-sans text-2xl sm:text-3xl lg:text-4xl font-semibold text-muted tracking-tight"
+              className="font-sans text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight"
             >
               {siteConfig.tagline}
             </motion.p>
+
+            <motion.div custom={2.5} variants={fadeUp} initial="hidden" animate="visible">
+              <PulseLine className="w-full max-w-xl h-12 text-accent" />
+            </motion.div>
 
             <motion.p
               custom={3}
               variants={fadeUp}
               initial="hidden"
               animate="visible"
-              className="text-muted max-w-lg text-lg leading-relaxed"
+              className="text-foreground/90 max-w-xl text-lg sm:text-xl leading-relaxed"
+            >
+              {siteConfig.subline}
+            </motion.p>
+
+            <motion.p
+              custom={3.5}
+              variants={fadeUp}
+              initial="hidden"
+              animate="visible"
+              className="text-muted max-w-xl leading-relaxed"
             >
               {siteConfig.description}
             </motion.p>
