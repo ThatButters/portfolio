@@ -3,7 +3,6 @@
 import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import activity from "@/data/activity.json";
-import { vitalsMilestones } from "@/data/portfolio";
 import SectionHeading from "./SectionHeading";
 
 // One hue, getting brighter with volume (dark surface, so brighter = more).
@@ -14,7 +13,7 @@ const EMPTY = "#18181a";
 const CELL = 12;
 const GAP = 3;
 const STEP = CELL + GAP;
-const TOP = 30; // room for month labels + milestone ticks
+const TOP = 20; // room for month labels
 const LEFT = 28; // room for weekday labels
 
 const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -79,7 +78,6 @@ export default function Vitals() {
 
   const width = LEFT + data.cols * STEP;
   const height = TOP + 7 * STEP;
-  const colOf = (iso: string) => data.cells.find((c) => c.date === iso)?.col ?? 0;
 
   const headline = [
     { value: total.toLocaleString(), label: `Contributions in ${year}` },
@@ -134,19 +132,6 @@ export default function Vitals() {
                   </text>
                 ))}
 
-                {vitalsMilestones.map((m, i) => {
-                  const x = LEFT + colOf(m.date) * STEP + CELL / 2;
-                  return (
-                    <g key={m.date}>
-                      <line x1={x} x2={x} y1={TOP - 12} y2={TOP + 7 * STEP - GAP} stroke="#33e07a" strokeOpacity="0.5" strokeDasharray="2 2" />
-                      <circle cx={x} cy={TOP - 12} r={6} fill="#0a0a0b" stroke="#33e07a" />
-                      <text x={x} y={TOP - 9} textAnchor="middle" fontSize="8" className="fill-accent font-mono">
-                        {i + 1}
-                      </text>
-                    </g>
-                  );
-                })}
-
                 {data.cells.map((c) => {
                   const l = level(c.n);
                   return (
@@ -179,18 +164,7 @@ export default function Vitals() {
               </svg>
             </div>
 
-            <div className="flex flex-wrap items-center justify-between gap-4 mt-4">
-              <ol className="flex flex-wrap gap-x-6 gap-y-2 text-sm">
-                {vitalsMilestones.map((m, i) => (
-                  <li key={m.date} className="flex items-center gap-2">
-                    <span className="inline-flex w-5 h-5 items-center justify-center rounded-full border border-accent text-accent font-mono text-[10px]">
-                      {i + 1}
-                    </span>
-                    <span className="text-foreground/90">{m.label}</span>
-                    <span className="font-mono text-xs text-muted">{fmt(m.date)}</span>
-                  </li>
-                ))}
-              </ol>
+            <div className="flex flex-wrap items-center justify-end gap-4 mt-4">
               <div className="flex items-center gap-1.5 font-mono text-[10px] text-muted" aria-hidden="true">
                 Less
                 {[EMPTY, ...RAMP].map((c) => (

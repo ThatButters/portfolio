@@ -304,11 +304,3 @@ export const story = {
     },
   ],
 };
-
-/* ── 2026 vitals (heatmap) ──────────────────────────────────── */
-
-export const vitalsMilestones = [
-  { date: "2026-02-17", label: "This site, v1" },
-  { date: "2026-06-17", label: "Heirloom & Tell, first commit" },
-  { date: "2026-10-06", label: "Buried in Work leaves WordPress" },
-];
