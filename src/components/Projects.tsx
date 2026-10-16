@@ -136,6 +136,11 @@ export default function Projects() {
               </p>
               <h3 className="font-sans text-2xl sm:text-3xl font-bold group-hover:text-accent transition-colors duration-300">
                 {featuredProject.title}
+                {featuredProject.status && (
+                  <span className="ml-3 align-middle px-2 py-0.5 text-[10px] font-mono tracking-wider uppercase text-muted border border-border rounded">
+                    {featuredProject.status}
+                  </span>
+                )}
               </h3>
               <p className="text-muted leading-relaxed">
                 {featuredProject.description}
@@ -286,6 +291,11 @@ export default function Projects() {
 
                 <h3 className="font-sans text-xl font-bold mb-2 group-hover:text-accent transition-colors duration-300">
                   {project.title}
+                  {project.status && (
+                  <span className="ml-3 align-middle px-2 py-0.5 text-[10px] font-mono tracking-wider uppercase text-muted border border-border rounded">
+                    {project.status}
+                  </span>
+                )}
                 </h3>
                 <p className="text-muted text-sm leading-relaxed mb-4">
                   {project.description}

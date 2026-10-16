@@ -115,13 +115,14 @@ export const featuredProject: {
   tech: string[];
   github?: string;
   live?: string;
+  status?: string;
   image?: string;
 } = {
   title: "ForgetMeNots.net",
   description:
     "A SaaS platform for composing and scheduling heartfelt messages for delivery to loved ones. Solely developed and launched end-to-end with secure handling for sensitive content, intuitive UI/UX, deployment pipelines, and monitoring for long-term reliability.",
   tech: ["Node.js", "React", "Docker", "VPS"],
-  live: "https://forgetmenots.net",
+  status: "Parked",
   image: "/images/projects/forgetmenots.png",
 };
 
@@ -131,6 +132,7 @@ export const projects: {
   tech: string[];
   github?: string;
   live?: string;
+  status?: string;
   image?: string;
 }[] = [
   {
@@ -139,7 +141,7 @@ export const projects: {
       "Converts a photo into a 3D-printable STL using Hunyuan3D 2.1 running on a self-hosted RTX 5070 Ti. Web interface on a VPS, communicates with the GPU over WebSocket: upload a photo, and a graphics card in Phoenix, AZ builds your object into 3D geometry in real time.",
     tech: ["Hunyuan3D 2.1", "FastAPI", "React", "PostgreSQL", "WebSocket", "Docker"],
     github: "https://github.com/ThatButters/3Dify",
-    live: "https://3dify.beeman.cloud",
+    status: "Offline for now",
     image: "/images/projects/3dify.png",
   },
   {
