@@ -7,7 +7,7 @@ import { vitalsMilestones } from "@/data/portfolio";
 import SectionHeading from "./SectionHeading";
 
 // One hue, getting brighter with volume (dark surface, so brighter = more).
-const RAMP = ["#3a2210", "#6b3810", "#a8520f", "#e97316", "#ffad5c"];
+const RAMP = ["#0f2a1a", "#145233", "#1c8a4c", "#2bc46a", "#8dffbd"];
 const LEVELS = [1, 10, 30, 60, 100]; // lower bound of each step
 const EMPTY = "#18181a";
 
@@ -138,8 +138,8 @@ export default function Vitals() {
                   const x = LEFT + colOf(m.date) * STEP + CELL / 2;
                   return (
                     <g key={m.date}>
-                      <line x1={x} x2={x} y1={TOP - 12} y2={TOP + 7 * STEP - GAP} stroke="#e97316" strokeOpacity="0.5" strokeDasharray="2 2" />
-                      <circle cx={x} cy={TOP - 12} r={6} fill="#0a0a0b" stroke="#e97316" />
+                      <line x1={x} x2={x} y1={TOP - 12} y2={TOP + 7 * STEP - GAP} stroke="#33e07a" strokeOpacity="0.5" strokeDasharray="2 2" />
+                      <circle cx={x} cy={TOP - 12} r={6} fill="#0a0a0b" stroke="#33e07a" />
                       <text x={x} y={TOP - 9} textAnchor="middle" fontSize="8" className="fill-accent font-mono">
                         {i + 1}
                       </text>

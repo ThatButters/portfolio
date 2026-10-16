@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { story } from "@/data/portfolio";
 import SectionHeading from "./SectionHeading";
-import PulseLine from "./PulseLine";
+import EcgMonitor from "./EcgMonitor";
 
 const ease = [0.22, 1, 0.36, 1] as const;
 
@@ -83,11 +83,11 @@ export default function TwoCareers() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.7, ease }}
-              className="relative mt-10 md:mx-auto md:max-w-xl rounded-lg border border-accent/40 bg-card/70 p-6 md:text-center shadow-[0_0_60px_rgba(233,115,22,0.08)]"
+              className="relative mt-10 md:mx-auto md:max-w-xl rounded-lg border border-accent/40 bg-card/70 p-6 md:text-center shadow-[0_0_60px_rgba(51,224,122,0.08)]"
             >
               <p className="font-mono text-xs tracking-widest uppercase text-accent">{finale.year} · Both</p>
               <p className="font-sans text-xl sm:text-2xl font-bold mt-2">{finale.text}</p>
-              <PulseLine className="w-full h-8 mt-4 text-accent" />
+              <EcgMonitor className="w-full h-12 mt-4" pxPerSecond={150} lineWidth={1.75} />
             </motion.div>
           )}
         </div>

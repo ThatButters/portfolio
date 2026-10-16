@@ -19,18 +19,18 @@ export default function OpengraphImage() {
           padding: "72px 80px",
           background: "#0a0a0b",
           backgroundImage:
-            "radial-gradient(circle at 15% 30%, rgba(233,115,22,0.18), transparent 45%), radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)",
+            "radial-gradient(circle at 15% 30%, rgba(51,224,122,0.18), transparent 45%), radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)",
           backgroundSize: "100% 100%, 24px 24px",
           color: "#e4e4e7",
           fontFamily: "sans-serif",
         }}
       >
-        <div style={{ display: "flex", fontSize: 26, color: "#e97316", letterSpacing: 4 }}>
+        <div style={{ display: "flex", fontSize: 26, color: "#33e07a", letterSpacing: 4 }}>
           BEEMAN.CLOUD
         </div>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <div style={{ display: "flex", fontSize: 92, fontWeight: 700, lineHeight: 1.05 }}>
-            Charles&nbsp;<span style={{ color: "#e97316" }}>Beeman</span>
+            Charles&nbsp;<span style={{ color: "#33e07a" }}>Beeman</span>
           </div>
           <div style={{ display: "flex", fontSize: 40, color: "#a1a1aa", marginTop: 20 }}>
             {siteConfig.tagline}
