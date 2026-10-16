@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { featuredProject, projects } from "@/data/portfolio";
@@ -58,12 +58,21 @@ function Lightbox({
   alt: string;
   onClose: () => void;
 }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
+
   return (
     <AnimatePresence>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
+        role="dialog"
+        aria-modal="true"
+        aria-label={alt}
         className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm cursor-zoom-out p-4 sm:p-8"
         onClick={onClose}
       >
@@ -102,12 +111,12 @@ export default function Projects() {
   } | null>(null);
 
   return (
-    <section id="projects" className="relative py-32">
+    <section id="projects" className="relative py-32 scroll-mt-16 overflow-x-clip">
       {/* Background gradient */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] rounded-full bg-accent/3 blur-[150px] pointer-events-none" />
 
       <div className="relative mx-auto max-w-6xl px-6">
-        <SectionHeading number="01." title="Featured Projects" />
+        <SectionHeading number="02." title="Independent Projects" />
 
         {/* Featured project */}
         <motion.div
@@ -123,7 +132,7 @@ export default function Projects() {
           <div className="flex flex-col lg:flex-row gap-8">
             <div className="flex-1 space-y-4">
               <p className="font-mono text-accent text-xs tracking-widest uppercase">
-                Featured Project
+                Founder project
               </p>
               <h3 className="font-sans text-2xl sm:text-3xl font-bold group-hover:text-accent transition-colors duration-300">
                 {featuredProject.title}
@@ -142,15 +151,17 @@ export default function Projects() {
                 ))}
               </div>
               <div className="flex gap-4 pt-4">
-                <a
-                  href={featuredProject.github}
-                  className="text-muted hover:text-accent transition-colors"
-                  aria-label="View source on GitHub"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <GitHubIcon />
-                </a>
+                {featuredProject.github && (
+                  <a
+                    href={featuredProject.github}
+                    className="text-muted hover:text-accent transition-colors"
+                    aria-label="View source on GitHub"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <GitHubIcon />
+                  </a>
+                )}
                 {featuredProject.live && (
                   <a
                     href={featuredProject.live}
@@ -171,7 +182,7 @@ export default function Projects() {
                 <button
                   onClick={() =>
                     setLightboxImage({
-                      src: featuredProject.image,
+                      src: featuredProject.image!,
                       alt: `${featuredProject.title} screenshot`,
                     })
                   }

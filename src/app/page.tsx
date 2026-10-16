@@ -1,6 +1,7 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
+import BuriedInWork from "@/components/BuriedInWork";
 import Projects from "@/components/Projects";
 import TechStack from "@/components/TechStack";
 import Experience from "@/components/Experience";
@@ -16,6 +17,7 @@ export default function Home() {
       <main>
         <Hero />
         <Marquee />
+        <BuriedInWork />
         <Projects />
         <TechStack />
         <Experience />
